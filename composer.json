@@ -28,10 +28,7 @@
     "autoload": {
         "psr-4": {
             "Airowner\\Admin\\": "src/"
-        },
-        "files": [
-            "src/helpers.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -43,8 +40,6 @@
         ]
     },
     "suggest": {
-        "intervention/image": "Required to handling and manipulation upload images (~2.3).",
-        "spatie/eloquent-sortable": "Required to built orderable gird."
     },
     "extra": {
         "laravel": {
