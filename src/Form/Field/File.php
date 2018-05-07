@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin\Admin\Form\Field;
+namespace Airowner\Admin\Form\Field;
 
 use Closure;
 use Encore\Admin\Form\Field\File as BaseFile;
@@ -8,13 +8,11 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class File extends BaseFile
 {
-    private static $global_name_callback;
+    public static $createNameFunc;
 
-    public static function setGlobalNameCallback(Closure $func)
+    public static function createName(callable $func)
     {
-        static::$global_name_callback = function($file){
-            return $func($file);
-        }
+        static::$createNameFunc = $func;
     }
 
     /**
@@ -44,8 +42,8 @@ class File extends BaseFile
             return $this->name->call($this, $file);
         }
 
-        if (static::$global_name_callback instanceof Closure) {
-            return static::$global_name_callback->call($this, $file);
+        if (!is_null(static::$createNameFunc)) {
+            return call_user_func(static::$createNameFunc, $file);
         }
 
         if (is_string($this->name)) {
@@ -65,7 +63,6 @@ class File extends BaseFile
 
         return $path;
     }
-
 
     // do not delete file
     public function destroy()

@@ -4,6 +4,7 @@ namespace Airowner\Admin;
 
 use Encore\Admin\Admin as BaseAdmin;
 use Closure;
+use Illuminate\Support\Facades\Route;
 
 class Admin extends BaseAdmin
 {

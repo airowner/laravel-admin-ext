@@ -28,8 +28,8 @@ File::saving(function($file) {
 });
 
 
-Encore\Admin\Form::extend(['file', File::class]);
-Encore\Admin\Form::extend(['image', Image::class]);
-Encore\Admin\Form::extend(['multifile', MultipleFile::class]);
-Encore\Admin\Form::extend(['multiimage', MultipleImage::class]);
+Encore\Admin\Form::extend('file', File::class);
+Encore\Admin\Form::extend('image', Image::class);
+Encore\Admin\Form::extend('multifile', MultipleFile::class);
+Encore\Admin\Form::extend('multiimage', MultipleImage::class);
 

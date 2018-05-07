@@ -14,7 +14,7 @@ class Image extends File
      *
      * @return string
      */
-    public function prepare(UploadedFile $image)
+    public function prepare($image)
     {
         $this->name = $this->getStoreName($image);
 

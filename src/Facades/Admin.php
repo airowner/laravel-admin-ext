@@ -1,6 +1,6 @@
 <?php
 
-namespace Airowenr\Admin\Facades;
+namespace Airowner\Admin\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

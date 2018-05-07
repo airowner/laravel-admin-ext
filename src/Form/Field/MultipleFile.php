@@ -7,7 +7,7 @@ use Encore\Admin\Form\Field\MultipleFile as BaseFile;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-class MultipleFile extends BaseField
+class MultipleFile extends BaseFile
 {
 
     /**
